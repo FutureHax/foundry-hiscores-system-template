@@ -1,0 +1,31 @@
+{
+  "id": "foundry-hiscores-system-template",
+  "title": "Foundry Hiscores System Template",
+  "description": "Starter template for a Foundry Hiscores system adapter module.",
+  "version": "0.1.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "authors": [],
+  "esmodules": ["scripts/profile.js"],
+  "relationships": {
+    "requires": [
+      {
+        "id": "foundry-hiscores",
+        "type": "module",
+        "manifest": "https://downloads.r2plays.games/futurehax/foundry-hiscores/latest/module.json",
+        "reason": "Core transport, queue, and adapter registry"
+      }
+    ],
+    "systems": [
+      {
+        "id": "your-system-id",
+        "type": "system",
+        "manifest": "",
+        "compatibility": {}
+      }
+    ]
+  }
+}
