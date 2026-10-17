@@ -37,8 +37,6 @@ Official adapters with complete readers: [Pirate Borg](https://github.com/Future
 | `characterActorTypes` | Player-character document types |
 | `readDeadState(actor)` | `alive`, `dead`, or `unknown` |
 | `readWealth(actor)` | Wealth snapshot in minor units |
-| `readInventory(actor)` | Owned physical items |
-| `classifyMagicItem(item)` | `magic`, `not-magic`, or `unknown` with a reason |
 | `readKillEvidence(context)` | Kill candidates, or empty |
 | `customCounters` | Namespaced counter definitions, or empty |
 | `observe(context)` | Core hook context to observations |
@@ -61,8 +59,6 @@ A wealth snapshot carries one immutable unit and method version:
 ```
 
 `complete: false` still stores the snapshot but drops it from wealth ranking and deltas. Changing what a unit or method means requires a new `wealthUnit` so historical records are not recompared under a new definition.
-
-Magic classification runs in priority order: an explicit system magic property, then system rarity or type semantics, then your own category mapping, then `unknown`. Item names and description keywords never yield `magic` on their own.
 
 Kill confidence is exactly `confirmed` 1.0, `probable` 0.7, and `uncertain` 0.4. Emit nothing when there is no player source or several equally plausible ones.
 

@@ -47,16 +47,6 @@ export const profile = Object.freeze({
     };
   },
 
-  // Owned physical items. itemKey prefers a source UUID over a document UUID.
-  readInventory() {
-    return EMPTY;
-  },
-
-  // Names and description keywords are never evidence of magic on their own.
-  classifyMagicItem() {
-    return { value: "unknown", method: "none", reason: "unsupported" };
-  },
-
   // Return [] when there is no player source or several equally likely ones.
   // Confidence is confirmed 1, probable 0.7, uncertain 0.4.
   readKillEvidence() {
